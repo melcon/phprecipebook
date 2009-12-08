@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>PHPRecipeBook Documentation</title>
+<style>
+body { background-color: #ffffff; font-family:Verdana, Arial; font-size=10pt }
+td {  font-family:Verdana, Arial; font-size=10pt }
+p {  font-family:Verdana, Arial; font-size=10pt }
+</style>
+</head>
+<body>
+<!-- --- Viewing a Recipe -------------------------------------------------------->
+<hr size=1>
+<p>
+<h2><a name="view_recipe">[ Viewing a Recipe ]</a></h2>
+<p>
+<blockquote>
+<h4><a name="scale_recipe">[ Scale Recipe ]</a></h4>
+	A recipe can be scaled to a different serving size by changing the number in this field.  If the serving size for a recipe is not set then it
+	cannot be scaled.  In order to allow scaling of a recipe, edit it and set the serving size information.
+<p>
+</blockquote>
+<!-- --- Adding/Editing Recipe -------------------------------------------------------->
+<hr size=1>
+<p>
+<h2><a name="addedit_recipe">[ Adding/Editing a Recipe ]</a></h2>
+<p>
+
+<blockquote>
+<h4><a name="dish_name">[ Dish Name ]</a></h4>
+	The dish name is the name that the dish will be call by.  Simply this is the name of the recipe.  The name should be a unique name that can be easily
+	remembered later and make some sense.
+<p>
+<h4><a name="source">[ Source ]</a></h4>
+	The source is where the recipe was found.  This is a list of sources that has been entered by the site administrator.
+
+<h4><a name="source">[ Source Description ]</a></h4>
+	If any additional information about a source needs to be included, such as a page number it can be added here.
+<p>
+<h4><a name="course">[ Course ]</a></h4>
+	The course is the time that the dish is typically served in a meal.  Pick the appropriate selection, if none match then you can customize this field by inserting or deleting rows from the database.
+<p>
+<h4><a name="base">[ Base ]</a></h4>
+	The base of a recipe is the item that the recipe is based off of.   Pick the appropriate selection, if none match then you can customize this field by inserting or deleting rows from the database.
+<p>
+<h4><a name="ethnicity">[ Ethnicity ]</a></h4>
+	The ethnicity of a recipe is what country the recipe has origins in. This makes sorting for recipes a lot easier, you can select what type of food you like based on what ethnicity it is, such as Chinese or Mexican.
+<p>
+<h4><a name="prep_time">[ Preparation Time ]</a></h4>
+	This is the time that it takes to prepare the recipe.
+<p>
+<h4><a name="difficulty">[ Difficulty ]</a></h4>
+	The difficulty of a recipe is the skill that is requires to make.  This is also an indicator of the amount of work involved in making a recipe.
+<p>
+<h4><a name="cost">[ Approximate Cost ]</a></h4>
+	The approximate cost of the recipe.  This should be an estimate, the exact price of a dish will of course vary from week to week depending on specials at the grocery store.
+<p>
+<h4><a name="servings">[ Serving Size ]</a></h4>
+	The number of servings is the number of people that the recipe will feed.  This number is also used when viewing a recipe to determine how to scale it.
+<p>
+<h4><a name="comments">[ Comments ]</a></h4>
+	This field is for any general comments you wish to make about the recipe, anything goes.
+<p>
+<h4><a name="picture">[ Picture ]</a></h4>
+	You can optionally select to upload a picture of the recipe. The picture can be any type that you wish (jpeg, png, gif...), though it should be a decent size. I would recommend 200x267 to try.  The image will be not resized automatically or
+	have any thumbnail used, so it is up to you to make the image the right size.  If you wish to remove the picture check the "Remove Picture" checkbox and the picture will be
+	removed from the recipe.
+<p>
+<h4><a name="submitter">[ Submitter ]</a></h4>
+	The submitter of a recipe is the person that entered the recipe into PHPRecipeBook, this is not necessarily the same as 
+	the source.  Only users with Editor and above access can set the submitter field, users with lower access are automatically
+	assigned to be the submitter of a recipe if they enter it, otherwise they are not.
+<p>
+<h4><a name="ingredients">[ Ingredients ]</a></h4>
+You can add as many ingredients as you wish in this section. In order to show more fields to add ingredients to display change the value in the
+"Number of fields to display" text box and press the refresh button next to it.  The ingredients currently entered in the text boxes will be preserved during the refresh so 
+loss of data should not occurr.
+<p>
+<blockquote>
+	<h5>[ Quantity ]</h5>
+		The quantity can be either enter as a fraction such as 1/2 or as a decimal.  If a fraction is entered the fraction will be converted to a decimal when the cursor leaves the field.
+		You can enter your own fraction approximations but it is best if you enter a fraction as x/y format in order to get the best precission.  The converting back from fractions can be disabled
+		in the configuration file (for countries that only use the metric system).
+	<p>
+	<h5>[ Units ]</h5>
+		The possible units that can be used can be selected from the drop down menu.  If you need a unit that is not present in the list ask the maintainer of this PHPRecipeBook to insert the value you want
+		into the database. This is a customization that can be easily done to locale the RecipeBook.
+	<p>
+	<h5>[ Ingredient ]</h5>
+		The ingredient is the name of the ingredient that you wish to have in this recipe.  If you are consistent in the naming of ingredients for this field then it will be more likely that when using a shopping list identical 
+		ingredients will be combined (good thing).  You can also put in quanitifiers to the ingredient in this field, such as large, half... etc...
+	<p>
+	<h5>[ Type ]</h5>
+		Type is used to sort ingredient in the shopping list.  These options should correspond to the sections that you would find in the grocery store when you go shopping.  Depending on what section of the 
+		store you would find the ingredient you are entering select the matching type.  For example onions would be found in 'produce' and tomato sauce would be found in 'dry goods'.  This will make the use
+		of the shopping list more powerful, it will not effect any other part of the PHPRecipeBook view of the recipe.
+</blockquote>
+<h4><a name="related_recipes">[ Related Recipes ]</a></h4>
+	Related recipes are recipes that are either required by this recipe in order to make or recipes that compliment the one you are currently entering.  The related recipes are 
+	not automatically put in your shopping list when you select their parent.  You can increase the number of related recipe pull down menus by changing the value of the
+	'Number of fields to display' field and pressing the refresh button next to the field.  You can delete a related recipe by selecting the blank entry in the dropdown.
+<p>
+<blockquote>
+	<h5><a name="related_recipes_required">[ Required ]</a></h5>
+	If the required checkbox is selected for a related recipe than the recipe is considered to be needed to make the parent recipe. This would be check for recipes like pie crust for a recipe for some type of pie.
+	When the checkbox is selected this causes the related recipe to be added to the shopping list when the parent recipe is added to the shopping list.  This will make sure you don't have a shopping list at the end without
+	important parts of a recipe that were broken up into subrecipes.
+</blockquote>
+<h4><a name="directions">[ Directions ]</a></h4>
+	Directions in order to make the recipe.  HTML will be converted to safe characters so that it will not be displayed.  Enters in the text area
+	will be converted to breaks so there is no need to use html.
+<p>
+<h4><a name="private">[ Private ]</a></h4>
+	If you select to make a recipe private then it can only be seen by the owner and users in the same group as the owner.  If a user has Editor permissions
+	they override the private setting and are allowed to view and edit the recipe.
+<p>
+</blockquote>
+
+<!-- --------------------------------------------------------------------- -->

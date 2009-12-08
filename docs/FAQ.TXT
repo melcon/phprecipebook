@@ -1,0 +1,18 @@
+			PHPRecipeBook FAQ
+
+Q. Why does my Meal-Master file fail to import?
+
+A. Many Meal-Master files that are available on the Internet or exported from a non Meal-Master program as Meal-Master are not necessarily Meal-Master files.  A lot of times the recipes are not correctly formatted and do not follow the Meal-Master specification (http://phprecipebook.sourceforge.net/docs/MM_SPEC.DOC).  If the file is not formatted according to the Meal-Master format it will not be supported.
+
+Q. Why can't I include two entries for the same ingredient in a recipe, I need to be able to group recipe ingredients?
+
+A. You should never have to enter an ingredient twice in a recipe.  If you need to group ingredients together for a sauce or some other sub-recipe then you should create a recipe for this.  So for example you would create a honey sauce recipe, and then in the chicken with rice recipe you would include the honey sauce recipe as a required related recipe.
+
+Q. Why am I getting this error message:
+  Fatal error: Call to undefined function: mysql_pconnect() in /var/www/html/phprecipebook/libs/adodb/drivers/adodb-mysql.inc.php on line 175
+
+A. Most likely you do not have MySQL support compiled into PHP. In order to fix this problem you need to either recompile PHP with MySQL support or install the php-mysql package for you operating system.
+
+Q. Why isn't X feature supported?
+
+A. PHPRecipeBook is mainly centered around the ability to manage a weekly menu of meals.  This include the ability to plan the meals, create a shopping list and view and edit the recipe.  If the feature does not go to further these goals then it is not a priority and also may be rejected to avoid feature bloat.

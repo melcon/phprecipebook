@@ -1,0 +1,7 @@
+ALTER TABLE `recipe_restaurants` ADD
+`restaurant_country` VARCHAR( 32 ) AFTER
+`restaurant_zip`;
+
+ALTER TABLE `recipe_restaurants` ADD
+`restaurant_website` VARCHAR( 200 ) AFTER
+`restaurant_name`;

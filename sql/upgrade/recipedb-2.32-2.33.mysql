@@ -1,0 +1,14 @@
+CREATE TABLE recipe_sources (
+	source_id INT NOT NULL AUTO_INCREMENT,
+	source_title VARCHAR(64),
+	source_desc MEDIUMTEXT,
+	PRIMARY KEY (source_id));
+	
+ALTER TABLE recipe_recipes CHANGE recipe_source recipe_source_desc VARCHAR(200);
+ALTER TABLE recipe_recipes ADD COLUMN recipe_source INT REFERENCES recipes_sources(source_id) ON DELETE SET NULL;
+
+INSERT INTO recipe_sources(source_desc) SELECT setting_sources FROM recipe_settings;
+UPDATE recipe_sources SET source_title='Default Source';
+
+ALTER TABLE recipe_settings DROP COLUMN setting_sources;
+UPDATE recipe_settings SET setting_version='2.33';

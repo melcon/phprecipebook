@@ -1,0 +1,112 @@
+body, td, th, input, select {
+	font-family: helvetica,arial,sans-serif;
+	font-size: 13px;
+}
+
+TD.nav {
+	font-family: verdana, helvetica,arial,sans-serif;
+	font-size: 12px;
+}
+
+A:link,
+A:active,
+A:visited {
+	color: #006699;
+}
+
+TD.nav A:link,
+TD.nav A:active,
+TD.nav A:visited {
+	color: #006699;
+	text-decoration: none;
+}
+
+TD.nav A:hover {
+	text-decoration: underline;
+}
+
+.error {
+	font-family : Helvetica, Verdana, Arial, sans-serif;
+	font-size : 11px;
+    color : Red;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+TABLE.data {
+	background: #ffffff;
+}
+
+TABLE.data TH {
+	font-size: 11px;
+	font-family: verdana,sans-serif;
+	background: #006699;
+	color: #ffffff;
+	border: #cccccc outset 1px;
+}
+
+TABLE.data TD {
+	font-size: 11px;
+	background: #d6e6f5;
+}
+
+TABLE.std {
+	background: #ffffff;
+	border: 2px solid #006699;
+}
+
+TABLE.std TD {
+	background: #d6e6f5;
+}
+
+TABLE.ing {
+	background: #d6e6f5;
+	border: 2px solid #006699;
+}
+
+TABLE.ing TD {
+	background: #ffffff;
+}
+
+TABLE.ing PRE {
+	font-family: helvetica,arial,sans-serif;
+	font-size: 13px;
+}
+
+TABLE.sidebox {
+	background : #006699;
+}
+
+TH.sidebox {
+	background : #006699;
+	font-family : Helvetica, Verdana, Arial, sans-serif;
+	font-size : 11px;
+	color : White;
+}
+
+TD.sidebox {
+	background : #d6e6f5;
+}
+
+.button {
+	border: 1px black solid;
+	font-family: verdana,sans-serif; font-size: 9pt
+}
+
+.field_textbox {
+	font-family : Helvetica, Verdana, Arial, sans-serif;
+	font-size : 11px;
+	background : White;
+	color : Black;
+	border : 1px solid Black;
+}
+
+.field_checkbox {
+ 	font-family : Helvetica, Verdana, Arial, sans-serif;
+	font-size : 11px;
+	background : White;
+	color : Black;
+}

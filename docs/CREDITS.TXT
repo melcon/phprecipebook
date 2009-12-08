@@ -1,0 +1,21 @@
+Developers:
+        Todd Rogers
+        Andrew Eddie
+	Paul Bearne
+	Jesse Mullan
+
+Translation:
+        French:
+                Martial Paupe
+                Dominique Potvin
+        Italian:
+                Federico Nebiolo
+        Swedish:
+                Åke Wivänge
+	German:
+		Holger Dors
+	Danish:
+		Klaus Agnoletti
+	Spanish:
+		Christian Carrasco
+        

@@ -1,0 +1,4 @@
+ALTER TABLE recipe_stores DROP PRIMARY KEY;
+ALTER TABLE recipe_stores ADD COLUMN store_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+UPDATE recipe_settings SET setting_version='2.25';

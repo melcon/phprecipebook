@@ -1,0 +1,3 @@
+TODO:
+	-Set default access levels for actions, example, level needed to add users, level needed to edit groups...
+	-Add password reset feature, email new password to users.

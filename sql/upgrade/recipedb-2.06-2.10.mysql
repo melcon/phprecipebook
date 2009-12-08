@@ -1,0 +1,22 @@
+CREATE TABLE recipe_restaurants (
+	restaurant_id INT NOT NULL AUTO_INCREMENT,
+	restaurant_name VARCHAR(64) NOT NULL,
+	restaurant_address VARCHAR(128),
+	restaurant_city VARCHAR(64),
+	restaurant_state VARCHAR(2),
+	restaurant_zip VARCHAR(16),
+	restaurant_phone VARCHAR(128),
+	restaurant_hours TEXT,
+	restaurant_picture MEDIUMBLOB,
+	restaurant_picture_type VARCHAR(64),
+	restaurant_menu_text TEXT,
+	restaurant_comments TEXT,
+	restaurant_price INT REFERENCES recipe_prices(price_id) ON DELETE SET NULL,
+	restaurant_delivery BOOL,
+	restaurant_carry_out BOOL,
+	restaurant_dine_in BOOL,
+	restaurant_credit BOOL,
+	PRIMARY KEY (restaurant_id)) TYPE=INNODB;
+
+
+UPDATE recipe_settings SET setting_version='2.10';

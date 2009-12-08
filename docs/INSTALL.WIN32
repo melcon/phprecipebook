@@ -1,0 +1,16 @@
+Installing PHPRecipeBook For Windows:
+
+1.) Suggest using: http://www.wampserver.com/en/ or similar combined product for Windows.
+2.) Read the instructions that come with Apache/MySQL combination, then proceed, but be prepared to adapt these instructions to the product your have selected.
+
+Setup:
+A.) Create the schema (do this from the mysql\bin directory so you have it in your path)
+	mysql -u user -p recipedb < C:\foxserv\www\phprecipebook\sql\recipedb.mysql
+	mysql -u user -p recipedb < C:\foxserv\www\phprecipebook\sql\recipedb_data_en.sql
+	mysql -u user -p recipedb < C:\foxserv\www\phprecipebook\sql\recipedb_ingredients_en.sql (optional step)
+
+	Note: where 'user' is the user you created in the early step with the password as well
+B.) Edit custom_inc.php to match your path information.
+C.) Load http://localhost/phprecipebook in your browser. Login as admin/passwd.
+	Note: using IE on windows does not seem to display the top logo correctly, it is displayed correctly in Mozilla and with IE on the Mac, so I think it is just a windows thing, you can replace it if you want (the browser or the image, there is a suppied jpg of the banner).
+D.) CHANGE THE ADMIN PASSWORD OF PHPRECIPEBOOK!

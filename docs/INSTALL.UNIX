@@ -1,0 +1,90 @@
+Project: PHPRecipeBook
+Version: 2.x
+Author: Todd Rogers
+License: GPL (see included LICENSE.TXT file)
+	please also see libs/adodb/license.txt (LGPL) and
+	libs/adodb/license.txt
+	libs/phpsm/LICENSE.TXT (LGPL)
+
+Description:
+	This projects purpose is to provide a convenient way to construct a weekly shopping list from a known list of recipes.  The user can view, add, search and modify recipes like any decent web based cookbook.  This cookbook provides the extra functionality to add recipes to a shopping list. The shopping list then can be saved or printed out.  The printed out version of the shopping list will attempt to merge similar items on the list. For example if two recipes call for 1 onion each, then the list will show a listing for 2 onions and not two separate onion listings.  The ability to sort the shopping list will also be a feature of the project.  The user will be able to set in preferences if they want vegetables to appear at the top, or meats, or whatever items the first find when walking into their local supermarket.  The lists that are saved to the database can be later loaded and viewed. An option to delete saved lists will also be available. The names of the lists can be changed, and a new list can be saved to an existing list name (save to… option). 
+
+Requirements:  
+    Apache 2.0/1.3
+    PHP 5.2.0:
+	-with PostgreSQL or MySQL Support compiled in or installed as a package
+	-XML support
+    Database: PostgreSQL or MySQL
+
+NEW INSTALLATIONS:
+
+Install and setup Apache, PHP, PostgreSQL/MySQL on your system.  Then proceed with these instructions to setup PHPRecipeBook.
+
+Database:
+	Table Names:
+		If you have to share a database with other applications first edit the database schema to make sure it does not conflict. Then update the settings
+		in custom_inc.php (get values from includes/config_inc.php) to match your new table names.
+		
+	PostgreSQL:
+	1. Create the database.  As the postgres user:
+		createdb recipedb
+		Note: The argument "recipedb" can be anything you want, just make sure you edit the PHP settings later to reflect this.
+	2. Import the Schema:
+		cd sql
+		psql recipedb
+		> \i recipedb.pgsql
+		> \i recipedb_data_(lang).sql
+		> \i recipedb_ingredients_en.sql (optional step)		  
+	3. Grant permissions to a user of your choosing to access the database.  These values are changed in hba.conf of PostgreSQL's config (found in /var/lib/pgsql/data on Redhat and some other systems).  
+		Remember the user and password you select for later use in config.
+
+	MySQL:
+	1. Create the database.
+		mysqladmin -u user -p mypass create recipedb
+	2. Import the Schema:
+		mysql -u user -p mypass recipedb < recipedb.mysql
+		mysql -u user -p mypass recipedb < recipedb_data_en.sql
+		mysql -u user -p mypass recipedb < recipedb_ingredients_en.sql (optional step)
+		
+	Customize The Data:
+		You can customize the dropdown selectings such as the ethnicity, courses, bases, etc... in the PHPRecipeBook by logging in as a admin
+		user and selecting the Settings->Administration->Customize menu.
+		
+UPGRADES:
+	1. Check what level your database schema is at. You can check the table recipe_settings column setting_version for this value.  An example SQL query to select it would be:
+	SELECT setting_version FROM recipe_settings;
+	You can also change DEBUG to TRUE in config_inc.php and the database schema version will be displayed.
+
+	If the version returned is behind what is currently available for upgrade, then apply the needed upgrade sql file(s). (Next Step)
+
+	2. Look in the sql/upgrades directory. Find the upgrade that matches what you want to do. If you are several levels behind you will have to do each file separatly. So if you are two version behind you will have to apply 2 different sql files.
+	3. Apply the changes to your database:
+		PostgreSQL:
+			psql -d recipedb -f recipedb-X.YY-X.YY.pgsql
+		MySQL:
+			mysql -u user -p mypass recipedb < recipedb-X.YY-X.YY.mysql
+	4. Repeat step 2 for each level that you are behind.
+	5. If you encounter an error check the line that it refers to in the sql file. If you see an obvious reason why it is failing fix it and appy that line and the ones following it one at a time (or in batch, up to you), and report the change to me.
+	
+PHP/Web:
+	1. You must have the postgreSQL/MySQL driver compiled into the PHP module for things to work.  If you are using a RPM based install of PHP then you must have the php-mysql/php-postgresql package installed.  
+		If that is all setup, then copy the PHPRecipeBook PHP files into a web accessible point or create an alias. PHPRecipeBook is written to work with Globals disabled in PHP.
+	example:
+		cp -R /tmp/phprecipebook-xx-yy /var/www/html/phprecipebook
+
+	2. Edit custom_inc.php to reflect your setup. Also look at:
+			includes/config_inc.php for phpRecipeBook options you can set, make sure you edit the path information.
+	3. Load http://yourhost/phprecipebook/ in your browser.
+  	4. Create additional phprecipebook users, and set their access level using the administrative user. 
+		By default the user 'admin' with password 'passwd' is created. Change the password after you login for the first time. 
+		You can also disable security if you want in config_inc.php/custom_inc.php
+
+Contact:
+	If you would like to contribute changes please visit the SourceForge project page or contact me (nazgul26@users.sourceforge.net).  An interface to request help and submit bugs is also available at the SourceForge project page.
+	http://sourceforge.net/projects/phprecipebook
+
+Translation:
+	If your native language has not been translated yet or is incomplete you can edit the values by going to to the Settings->Administration->Translation menu and selecting your language.
+	When you are done the language file is updated and saved.  You can send this file to me (nazgul26@users.sourceforge.net) for inclusion in future release of PHPRecipeBook, the file is
+	located in lang/<lang>.php where <lang> is your country code.  If your native language has not been translated yet you can by editing config_inc.php
+	and adding your language to $g_sm_supported_languages. After you have done that you can edit the values for your native language through the Administrative menu in the application.

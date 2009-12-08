@@ -1,0 +1,12 @@
+Upgrading
+
+
+1.x to 2.x
+
+If you are upgrading from the 1.x version of PHPRecipeBook there is no direct and easy way to migrate the data. The way that I recommend to migrate to the 2.x schema is to export all of the recipes as PHPRecipeBook XML, then import this data into 2.x.  You will need to be running the last release of 1.x in order to get the most up to date export features.  If everything goes smoothly this should be a very easy and painless proceedure.  Make sure you backup your database and all data files before doing this.  If you run into problems or loose data please post a comment or bug at the sourceForge project webpage:
+
+http://sourceforge.net/projects/phprecipebook/
+
+2.x to 2.x+
+
+Save your custom_inc.php file from the 2.x version, then extract the new version and backup the old version.  Copy the custom_inc.php into the new 2.x+ version and then check the sql/upgrades directory to see if any sql patches need to be applied (see the INSTALL document for additional information).

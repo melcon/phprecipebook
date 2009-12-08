@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<style>
+			@import url( libs/autocomplete/css/page.css );
+			@import url( libs/autocomplete/css/tabsexamples.css );
+			@import url( libs/autocomplete/css/SyntaxHighlighter.css );
+			@import url( libs/autocomplete/css/dropdown.css );
+		</style>
+		
+		<script src="libs/autocomplete/js/modomevent3.js"></script>
+		<script src="libs/autocomplete/js/modomt.js"></script>
+		<script src="libs/autocomplete/js/modomext.js"></script>
+		<script src="libs/autocomplete/js/tabs2.js"></script>
+		<script src="libs/autocomplete/js/getobject2.js"></script>
+		<script src="libs/autocomplete/js/xmlextras.js"></script>
+		<script src="libs/autocomplete/js/acdropdown.js"></script>
+		<!-- syntax highlight -->
+		<script language="javascript" src="libs/autocomplete/js/shCore.js" ></script >
+		<script language="javascript" src="libs/autocomplete/js/shBrushXml.js" ></script >
+	</head>
+<body>
+<script language="JavaScript">
+function submitIt()
+{
+	var hInput = document.getElementById("ingredientEntry_0");
+	var vInput = document.getElementById("ACH_ingredientEntry_0");
+	alert("test:" + hInput.value + ",ID: " + vInput.value);
+}
+</script>
+<form>
+Ingredients:
+<input id="ingredientEntry_0" acdropdown="true" autocomplete_list="url:index.php?m=ingredients&a=get&format=no&search=[S]" 
+autocomplete_matchsubstring="true" autocomplete_assoc="true" name="ingredientText_0" value="allspice">
+<input type="hidden" id="ACH_ingredientEntry_0" name="ACH_ingredientText_0" value=""><br>
+<br>
+
+<input type="button" onClick="javascript:submitIt();" value="Submit">
+</form>
+
+</body>
+</html>
